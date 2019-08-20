@@ -1,0 +1,41 @@
+.list-box {
+  background: #F0F8FF;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  form {
+    height: 400px;
+    ul {
+      list-style-type: none;
+    }
+    input {
+      background: #4d5c4e;
+      height: 50px;
+      width: 200px;
+      text-align: center;
+      font-size: 2rem;
+      margin-top: 20px;
+      border-radius: 10px;
+      color: white;
+    }
+    button {
+      height: 40px;
+      width: 150px;
+      text-align: center;
+      font-size: 1.5rem;
+      margin-top: 20px;
+      border-radius: 10px;
+      color: black;
+    }
+  }
+  .on-click-button {
+    button {
+      height: 60px;
+      width: 140px;
+      text-align: center;
+      font-size: 1.3rem;
+      border-radius: 10px;
+      color: red;
+    }
+  }
+}

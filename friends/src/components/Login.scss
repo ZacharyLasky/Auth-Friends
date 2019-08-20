@@ -1,0 +1,26 @@
+form {
+  background: #F0F8FF;
+  height: 400px;
+   ul {
+      list-style-type: none;
+    }
+  input {
+    background: #4d5c4e;
+    height: 50px;
+    width: 200px;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 20px;
+    border-radius: 10px;
+    color: white;
+  }
+  button {
+    height: 40px;
+    width: 150px;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 20px;
+    border-radius: 10px;
+    color: black;
+  }
+}

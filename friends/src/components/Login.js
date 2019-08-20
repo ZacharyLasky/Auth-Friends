@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './Login.scss';
 
 export default function Login(props) {
 
@@ -29,9 +30,11 @@ export default function Login(props) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input name="username" value={item.username} placeholder="username" onChange={handleChange}/>
-      <input name="password" value={item.password} placeholder="password" onChange={handleChange}/>
+    <ul>
+      <li><input name="username" value={item.username} placeholder="username" onChange={handleChange}/></li>
+      <li><input name="password" value={item.password} placeholder="password" onChange={handleChange}/></li>
       <button>Submit</button>
+    </ul>
     </form>
   )
 }

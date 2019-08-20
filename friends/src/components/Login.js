@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-export default function Login() {
+export default function Login(props) {
 
   const [item, setItem] = useState({
     username: "",
@@ -16,9 +16,10 @@ export default function Login() {
   const handleSubmit = event => {
     event.preventDefault()
     axios
-      .post("http://localhost:5000", item)
+      .post("http://localhost:5000/api/login", item)
       .then(response => {
         localStorage.setItem("token", response.data.payload)
+        // props.history.push("/protected")
         console.log(response);
       })
       .catch(error => {

@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
+import FriendsListDisplay from './FriendsListDisplay';
+
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 
-export default function FriendsList() {
+export default function FriendsList(props) {
 
   const [friend, setFriend] = useState({
     name: "",
     age: "",
     email: ""
   })
+  
+  const [data, setData] = useState([])
+  
 
   const handleChange = event => {
     setFriend({ ...friend, [event.target.name]: event.target.value })
@@ -20,6 +25,11 @@ export default function FriendsList() {
       .post("http://localhost:5000/api/friends", friend)
       .then(response => {
         console.log(response.data)
+        setFriend({
+          name: "",
+          age: "",
+          email: ""
+        })
       })
       .catch(error => {
         console.log(error.response)
@@ -30,7 +40,7 @@ export default function FriendsList() {
     axiosWithAuth()
       .get("http://localhost:5000/api/friends")
       .then(response => {
-        setFriend(response.data)
+        setData(response.data)
         console.log(response.data)
       })
       .catch(error => {
@@ -47,8 +57,11 @@ export default function FriendsList() {
         <button>Submit</button>
       </form>
       
-      <button onClick={getData}>Display Friends</button>
-    </>
+      <div>
+        <button onClick={getData}>Display Friends</button>
+        <FriendsListDisplay data={data}/>
+      </div>
     
+    </>
   )
 }

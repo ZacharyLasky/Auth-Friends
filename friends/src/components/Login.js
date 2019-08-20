@@ -19,7 +19,7 @@ export default function Login(props) {
       .post("http://localhost:5000/api/login", item)
       .then(response => {
         localStorage.setItem("token", response.data.payload)
-        // props.history.push("/protected")
+        props.history.push("/protected")
         console.log(response);
       })
       .catch(error => {

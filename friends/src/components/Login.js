@@ -19,6 +19,7 @@ export default function Login() {
       .post("http://localhost:5000", item)
       .then(response => {
         localStorage.setItem("token", response.data.payload)
+        console.log(response);
       })
       .catch(error => {
         console.log(error.response)
